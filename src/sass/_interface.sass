@@ -1,0 +1,41 @@
+.btn
+    display: flex 
+    align-items: center
+    justify-content: center
+    width: 100%
+    padding: 13px
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25)
+    transition: all 0.2s
+    span 
+        position: relative
+        padding-left: 33px
+        font-weight: bold
+        font-size: 18px
+        color: #ffffff
+        &::before
+            content: ''
+            position: absolute
+            top: 50% 
+            transform: translateY(-50%)
+            left: 0
+            width: 22px
+            height: 21px
+            background: url('../images/icons/youtube.svg')
+            background-size: cover 
+    &--red
+        background: #B91A04
+        &:hover
+            background: darken(#B91A04, 10%)
+    &--green
+        background: #52B45F
+        &:hover
+            background: darken(#52B45F, 10%)
+    &--orange 
+        background: #F87D1C
+        &:hover
+            background: darken(#F87D1C, 10%)
+
+@media screen and ( max-width: 576px )
+    .btn
+        span 
+            font-size: 14px

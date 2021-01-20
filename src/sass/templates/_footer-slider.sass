@@ -1,0 +1,79 @@
+.footer-slider
+    margin-bottom: 25px
+    padding-bottom: 70px
+    &-container
+        position: relative
+    &__item
+        display: flex !important
+        justify-content: space-betwee
+    &__block
+        height: 150px
+        overflow: hidden
+    &__title
+        margin-bottom: 15px
+        font-weight: bold
+        font-size: 18px
+    &__list 
+        li 
+            position: relative
+            padding-left: 20px
+            font-weight: 300
+            margin-bottom: 8px
+            &::before
+                content: ''
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                left: 0
+                width: 9px
+                height: 9px
+                background: url('../images/icons/arrow-right.svg')
+                background-size: cover 
+    &__show
+        position: absolute
+        padding: 0 20px
+        bottom: 0px 
+        left: 50%
+        transform: translateX(-50%)
+        height: 40px
+        border: none 
+        font-size: 14px
+        color: #ffffff
+        background-color: #BA1903
+        cursor: pointer
+    .slick-active, 
+    .slick-slide
+        outline: none
+    .slick-arrow.slick-prev,
+    .slick-arrow.slick-next
+        position: absolute
+        bottom: 0
+        background-color: #BA1903
+        font-size: 0
+        border: none 
+        width: 40px
+        height: 40px
+        z-index: 10
+        cursor: pointer
+        &::before
+            content: ''
+            position: absolute
+            top: 50%
+            left: 50%
+            width: 8px
+            height: 8px
+            transform: translate(-50%, -50%)
+    .slick-arrow.slick-prev
+        left: 0
+        &::before
+            transform: translate(-50%, -50%) rotate(180deg)
+            background: url('../images/icons/slider-arrow.svg')
+            background-size: cover 
+    .slick-arrow.slick-next
+        right: 0
+        &::before
+            background: url('../images/icons/slider-arrow.svg')
+            background-size: cover 
+    .slick-arrow.slick-disabled
+        opacity: 0.3
+        cursor: default
