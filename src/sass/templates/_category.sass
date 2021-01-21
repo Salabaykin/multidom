@@ -3,14 +3,46 @@
         display: flex
     &-item 
         width: 50%
-        a 
-            display: block
-            img 
-                width: 100%
+        position: relative
+        padding-bottom: 17%
+        overflow: hidden
+        background-size: 100%
+        background-position: center 
+        background-repeat: no-repeat
+        transition: all 0.2s
         &:nth-child(1)
-            padding-right: 15px
+            margin-right: 5px
         &:nth-child(2)
-            padding-left: 15px
+            margin-left: 5px
+        &:hover
+            box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25)
+        &__block
+            position: absolute
+            top: 0
+            left: 0
+            max-width: 220px
+            display: flex
+            flex-direction: column
+            align-items: flex-end
+        &__tagline
+            position: absolute
+            top: 0
+            right: 0
+            padding: 25px 40px
+            color: #ffffff
+            text-transform: uppercase
+            font-size: 22px
+            font-weight: bold
+            background-color: rgba(#B91A04, 0.5)
+        &__title
+            padding: 25px 50px
+            color: #ffffff
+            text-transform: uppercase
+            font-size: 22px
+            font-weight: bold
+            background-color: #B91A04
+        &__btn
+            margin-top: 20px
 
 @media screen and ( max-width: 991px )
     .category__wrap

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
   $('.category-slider').slick({
-    slidesToShow: 4,
+    slidesToShow: 5,
     infinite: false,
     responsive: [
       {
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   var slider = $('.footer-slider').slick({
-    slidesToShow: 4,
+    slidesToShow: 5,
     infinite: false,
     responsive: [
       {

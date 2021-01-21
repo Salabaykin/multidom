@@ -1,17 +1,25 @@
 .section
-    margin-bottom: 25px
+    margin-bottom: 10px
     &__wrap
         display: flex
         justify-content: space-between
         flex-wrap: wrap
     &-left
         display: flex
+        width: 21%
+        padding-right: 5px
+    &-right
+        width: 79%
+        padding-left: 5px
 
 .subscribe
     padding: 20px 30px
-    width: 325px
-    height: 390px
+    width: 100%
+    height: 100%
     background: #BA1903
+    transition: all 0.2s
+    &:hover
+        box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25)
     &__title 
         margin-bottom: 30px
         font-weight: bold
@@ -21,6 +29,8 @@
         color: #F9F9F9
         text-transform: uppercase
     &__list 
+        margin: 0
+        padding: 0
         margin-bottom: 20px
         li 
             margin-bottom: 10px
@@ -30,6 +40,7 @@
             font-size: 18px
             line-height: 21px
             color: #F9F9F9
+            list-style: none
             &:last-child
                 margin-bottom: 0
             &::before
@@ -42,7 +53,7 @@
                 background: url('../images/icons/check.svg')
                 background-size: cover 
     &__input
-        width: 250px
+        width: 100%
         span 
             position: relative
             display: block
@@ -55,11 +66,15 @@
                 content: ''
                 position: absolute
                 top: 0
-                right: 0
+                right: 10px
                 width: 20px
                 height: 20px
                 background: url('../images/icons/arrow-down.svg')
                 background-size: cover 
+    &:hover
+        span
+            &::after
+                animation: subscribe-icon 1s infinite 
     &-form 
         display: flex
         align-items: center
@@ -70,14 +85,23 @@
             background: #FFFFFF
             border: 1px solid #CCCCCC
         button
+            position: relative
             height: 32px
+            width: 50px
             background: #F9F9F9
             border: none 
             cursor: pointer
-            padding: 0 10px
-            display: flex
-            align-items: center
-            justify-content: center
+            &::before
+                content: ''
+                position: absolute
+                top: 50% 
+                left: 50% 
+                transform: translate(-50%, -50%)
+                width: 28px
+                height: 20px
+                background: url('../images/icons/email.svg')
+                background-repeat: no-repeat
+                background-size: cover 
     &__last
         margin-top: 24px
         a 
@@ -86,39 +110,118 @@
             text-decoration-line: underline
             color: #F9F9F9
 
-.banner
-    margin-left: 25px
-    height: 390px
-    a 
-        display: block
-        img 
-            width: 390px
+@keyframes subscribe-icon
+    0%
+        top: 0px
+    25%
+        top: 6px
+    50%
+        top: 0px
+    75%
+        top: 6px
+    100%
+        top: 0px
 
-.category-list
-    height: 100%
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-    &__item
-        width: 415px
-        a 
+.mailing
+    &-list
+        width: 100%
+        height: 100%
+        display: flex
+        &__wrap
+            width: 60%
+    &-item
+        position: relative
+        display: flex
+        transition: all 0.2s
+        &:hover
+            box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25)
+        &__wrap
+            padding: 30px 20px
+            position: absolute
+            top: 0
+            left: 0
+            height: 100%
+            z-index: 5
+            max-width: 250px
+        &__title
+            color: #ffffff
+            text-transform: uppercase
+            font-weight: bold
+            text-align: center
+        &__descr
+            margin-top: 10px
+            color: #ffffff
+            font-size: 14px
+            text-align: center
+        &__btn
+            position: absolute
+            bottom: 20px
+            left: 50%
+            transform: translateX(-50%)
+        &__img
             width: 100%
-            display: block
-            img 
-                display: block
-                width: 100%
+            position: relative
+            padding-bottom: 25%
+            overflow: hidden
+            background-size: 100%
+            background-position: center 
+            background-repeat: no-repeat 
+        &__date
+            position: absolute
+            top: 15px
+            right: 15px
+            z-index: 5
+            padding: 7px
+            background-color: #B91A04
+            color: #ffffff
+            border-radius: 5px
+            font-weight: normal
+            font-size: 14px
+        &:nth-child(1)
+            margin-bottom: 10px
+        
+.b-mailing-item
+    position: relative
+    width: 40%
+    height: 100%
+    margin-right: 10px
+    transition: all 0.2s
+    &:hover
+        box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25)
+    &__wrap
+        height: 100%
+        padding: 60px 40px
+    &__title
+        margin-bottom: 25px
+        font-size: 45px
+        text-align: center
+        text-transform: uppercase
+        font-weight: bold
+        color: #ffffff
+    &__descr
+        text-align: center
+        color: #ffffff
+    &__btn
+        position: absolute
+        bottom: 40px
+        left: 50%
+        transform: translateX(-50%)
+    &__date
+        position: absolute
+        top: 15px
+        right: 15px
+        z-index: 5
+        padding: 7px
+        background-color: #B91A04
+        color: #ffffff
+        border-radius: 5px
+        font-weight: normal
+        font-size: 14px
 
 @media screen and ( max-width: 1230px )
     .section-right 
-        margin-top: 25px
+        margin-top: 10px
         width: 100%
-    .category-list 
-        flex-direction: row
-        width: 100%
-    .category-list__item
-        width: 50%
-        &:nth-child(2)
-            margin-left: 25px
     .section-left 
         width: 100%
     .subscribe
@@ -126,29 +229,11 @@
 
 @media screen and ( max-width: 991px )
     .section-right 
-        margin-top: 25px
+        margin-top: 10px
         width: 100%
-    .category-list 
-        flex-direction: column
-        width: 100%
-    .category-list__item
-        width: 100%
-        &:nth-child(2)
-            padding-top: 25px
-            margin-left: 0
 
 @media screen and ( max-width: 900px )
     .section-left
         flex-wrap: wrap 
     .subscribe__input 
         width: 100%
-    .banner 
-        margin-top: 25px
-        margin-left: 0
-        width: 100%
-        height: 100%
-        a 
-            img 
-                width: 100%
-    
-            
