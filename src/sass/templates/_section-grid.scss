@@ -1,0 +1,108 @@
+.grid-container {
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 0.9fr 1fr 1.5fr;
+    grid-template-rows: 1fr;
+    gap: 10px 10px;
+    grid-template-areas:
+      "g-subscribe g-b-mailing g-mailing";
+}
+
+.g-mailing {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px 0px;
+    grid-template-areas:
+        "g-mailing-item-1"
+        "g-mailing-item-2";
+    grid-area: g-mailing;
+}
+
+.g-mailing-item { 
+    grid-area: g-mailing-item-1; 
+}
+
+.g-mailing-item { 
+    grid-area: g-mailing-item-2; 
+}
+
+.g-b-mailing { 
+    grid-area: g-b-mailing; 
+}
+
+.g-subscribe { 
+    grid-area: g-subscribe; 
+}  
+
+@media all and (-ms-high-contrast:none) {
+
+    .grid-container {
+      display: -ms-grid;
+      -ms-grid-columns: 0.9fr 1fr 1.5fr;
+      -ms-grid-rows: 1fr;
+      margin: 10px 0;
+    }
+    
+    .g-subscribe {
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 1;
+    }
+    
+    .g-b-mailing {
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 1;
+      margin-left: 10px;
+      -ms-grid-column: 2;
+    }
+    
+    .g-mailing {
+      display: -ms-grid;
+      -ms-grid-columns: 1fr;
+      -ms-grid-rows: 1fr 1fr;
+      margin-left: 10px;
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 3;
+      -ms-grid-column-span: 3;
+    }
+    
+    .g-mailing-item-1 {
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 1;
+      margin-bottom: 10px;
+      -ms-grid-column-span: 1;
+    }
+    
+    .g-mailing-item-2 {
+      -ms-grid-row: 2;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 0;
+    }
+    
+}
+
+@media screen and ( max-width: 1024px ) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: min-content;
+        grid-template-areas:
+            "g-subscribe g-b-mailing"
+            "g-mailing g-mailing";
+    }
+}
+    
+@media screen and ( max-width: 670px ) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content;
+        grid-template-areas:
+            "g-subscribe"
+            "g-b-mailing"
+            "g-mailing";
+    }
+}

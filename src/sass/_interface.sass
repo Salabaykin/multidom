@@ -1,9 +1,10 @@
-.btn
+.k-btn
     display: flex 
     align-items: center
     justify-content: center
     width: 100%
     padding: 13px
+    background: #B91A04
     transition: all 0.2s
     span 
         position: relative
@@ -21,30 +22,12 @@
             height: 21px
             background: url('../images/icons/youtube.svg')
             background-size: cover 
-    &--red
-        background: #B91A04
-        &:hover
-            box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25)
-            background: darken(#B91A04, 5%)
-            span
-                &::before
-                    animation: btn-icon 1s ease-in-out
-    &--green
-        background: #52B45F
-        &:hover
-            box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25)
-            background: darken(#52B45F, 5%)
-            span
-                &::before
-                    animation: btn-icon 1s ease-in-out
-    &--orange 
-        background: #F87D1C
-        &:hover
-            box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25)
-            background: darken(#F87D1C, 5%)
-            span
-                &::before
-                    animation: btn-icon 1s ease-in-out
+    &:hover
+        box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25)
+        background: darken(#B91A04, 5%)
+        span
+            &::before
+                animation: btn-icon 1s ease-in-out
 
 .b-btn
     position: relative
@@ -55,7 +38,7 @@
     color: #ffffff
     border-radius: 7px
     font-weight: normal
-    font-size: 17px
+    font-size: 0.944em
     &::after
         content: ''
         position: absolute
@@ -66,7 +49,7 @@
         width: 15px
         height: 15px
         background-image: url('../images/icons/arrow-link.svg')
-        background-size: 60%
+        background-size: 50%
         background-repeat: no-repeat
         background-position: center 
         border-radius: 50%
